@@ -38,7 +38,7 @@ export default {
     },
     data() {
         return {
-            message: 'Add your new Goal title',
+            message: 'Add your new Goal topic',
             message1: 'Add here what do you miss in your life?',
             message2: 'Add here what would you like to change?',
             message3: 'Add which things you could give up?',

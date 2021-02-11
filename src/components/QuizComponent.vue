@@ -26,8 +26,11 @@
             <div class="q-score" v-if="score_show">
                 <h2>Here is your score</h2>
                 <h2> {{ score }} / {{ questions.length}}</h2>
-                <div @click="restartQuiz" class="q-restart">
-                    <button><font-awesome-icon :icon="['fas', 'sync-alt']" class="q-icon" />restart</button>
+                <div @click="restartQuiz">
+                    <button class="q-buttonRestart"><font-awesome-icon :icon="['fas', 'sync-alt']" class="q-icon" />restart</button>
+                </div>
+                <div @click="closeView">
+                    <button><font-awesome-icon :icon="['fas', 'times']" class="q-icon" />Close</button>
                 </div>
             </div>
             <!-- quiz footer area include skip and next buttons -->
@@ -37,6 +40,7 @@
                     <button @click="nextQuestion" class="q-button-next">next</button>
                 </div>
             </div>
+            
         </div>
     </div>
 </template>
@@ -145,7 +149,10 @@ export default {
         restartQuiz() {
 
             Object.assign(this.$data, this.$options.data());
-        }
+        },
+        closeView() {
+            this.$emit("closewindow")
+        },
     }
 }
 </script>
@@ -153,13 +160,22 @@ export default {
 // Add "scoped" attribute to limit CSS to this component only
 <style scoped>
     .q-quiz {
-        width: 600px;        
-        height: 80%;
+        width: 100vw;        
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.72);
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
 
-    .q-quiz-label {   
+    .q-quiz-label {
+        width: 600px;   
         height: 550px;            
         padding: 20px;
+        margin-top: 40px;;
+        margin-left: auto;
+        margin-right: auto;
         border-radius: 10px;
         border-color: 1px blue;
         background-color: white;
@@ -254,15 +270,18 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
+        justify-items: center;
+    }    
 
-    .q-restart {
-        width: 120px;        
-        border: 0;
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        justify-items: center;        
+    .q-buttonRestart {
+        background-color:#323266; ;
+        color: white;
+        width: 120px;
+        height: 40px;
+        margin: 10px;
+        border: 0;        
+        cursor: pointer;
+        font-size: 1rem;        
     }
 
     .q-icon {
@@ -275,7 +294,7 @@ export default {
         flex-direction: row;
         justify-content: flex-end;
         
-    }
+    }    
 
     button {
         background-color: rgb(230, 235, 241);

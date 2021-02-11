@@ -2,14 +2,17 @@
     <div class="f-frontpage">
         <div class="top-illustration">
             <img alt="Illustration_Kristiina_Laaksonen_2021" src="@/assets/Kuvitus_Kristiina_Laaksonen_2021.png" /> 
-        </div>         
+        </div> 
+        <!-- developer introduction -->        
         <div class="f-frontpage-component"> 
             <div class="f-title">
-                <h1>Welcome to my Portfolio</h1> 
+                <h1>Kristiina Laaksonen</h1> 
+                <h2>Junior Software Developer / Junior UI Designer</h2>
             </div>    
         </div> 
+        <button @click="openQuiz = !openQuiz" class="f-buttonQuiz">Take a Quiz</button>
         <!-- Quiz component -->
-        <QuizComponent />    
+        <QuizComponent v-show="openQuiz" @closewindow="closeQuiz"/>    
      </div>
 </template>
 
@@ -25,9 +28,18 @@ export default {
     data() {
         return {
             image: image, 
-            // GetAllBikeRentalStations: []                
+            openQuiz: false,                
         }
-    },              
+    },  
+    
+    methods: {
+        closeView() {
+            this.$emit("closewindow")
+        },
+        closeQuiz() {
+            this.openQuiz = false;
+        },
+    }
 }
 </script>
 
@@ -56,6 +68,17 @@ export default {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    .f-buttonQuiz {
+        background-color: #323266;
+        color: white;
+        width: 120px;
+        height: 40px;
+        margin: 10px;
+        border: 1px;        
+        cursor: pointer;
+        font-size: 1rem;
     }
 
     .top-illustration {    

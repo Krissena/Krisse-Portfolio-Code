@@ -45,7 +45,7 @@
     font-family: "Opens Sans", sans-serif;
     font-size: 1.5rem;
     font-weight: 300;
-    color: #323266    
+    color: #323266;    
   }
 
   p {
