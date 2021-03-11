@@ -1,5 +1,8 @@
 <template>
     <div class="q-quiz">
+        <div @click="closeView" class="q-action-label">
+            <div class="q-action"><font-awesome-icon :icon="['fas', 'times']" class="q-icon" />Close</div>
+        </div>
         <div class="q-quiz-label">
             <div class="q-title-label">
                 <h1>Take a quiz</h1>
@@ -162,11 +165,24 @@ export default {
     .q-quiz {
         width: 100vw;        
         height: 100vh;
+        padding: 40px 20px 20px 20px;
         background: rgba(0, 0, 0, 0.72);
         z-index: 1;
         position: absolute;
         top: 0;
         left: 0;
+    }
+
+    .q-action-label {
+        padding-right: 100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .q-action {
+        color: white;
+        cursor: pointer;
     }
 
     .q-quiz-label {

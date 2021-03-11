@@ -11,7 +11,7 @@
             <input type="text" :value="msg1" @input="changeMessageWhat" :maxlength="max1" class="nf-input-value" />
             <p>max 135 characters</p>
             <!-- Question and input area -->
-            <p class="nf-title">What would you like to chanfe in your life?</p> 
+            <p class="nf-title">What would you like to change in your life?</p> 
             <input type="text" :value="msg2" @input="changeMessageIssue" :maxlength="max1" class="nf-input-value" />
             <p>max 135 characters</p>
             <!-- Question and input area -->
