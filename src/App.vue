@@ -48,6 +48,14 @@
     color: #323266;    
   }
 
+  h3 {
+    font-family: "Opens Sans", sans-serif;
+    font-size: 1.125rem;
+    font-weight: 300;
+    
+    color: #323266;    
+  }
+
   p {
     font-family: "Open Sans", sans-serif;
     font-size: 1rem;
@@ -56,6 +64,10 @@
 
   * {
     box-sizing: border-box;
+  }
+
+  ul {
+    padding: 0;
   }
   
 </style>

@@ -17,6 +17,12 @@
                         <font-awesome-icon :icon="['fas', 'align-left']" class="m-icon" />
                         <span>Forms</span>
                     </router-link>  
+                </div>
+                <div class="m-link-label">                                     
+                    <router-link to="/traficpage" class="menuItem-active-link">
+                        <font-awesome-icon :icon="['fas', 'bicycle']" class="m-icon" />
+                        <span>Trafic</span>
+                    </router-link>  
                 </div>                                        
             </div>
             <!-- menu info area -->
@@ -97,9 +103,8 @@ export default {
         justify-content: flex-start;
     }
 
-    .m-link-label {    
-             
-        margin-bottom: 10px;
+    .m-link-label { 
+        margin-bottom: 20px;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;

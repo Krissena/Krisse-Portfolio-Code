@@ -1,5 +1,5 @@
 <template>
-    <div class="f-frontpage">
+    <div class="f-frontpage">        
         <div class="top-illustration">
             <img alt="Illustration_Kristiina_Laaksonen_2021" src="@/assets/Kuvitus_Kristiina_Laaksonen_2021.png" /> 
         </div> 
@@ -12,8 +12,8 @@
         </div> 
         <button @click="openQuiz = !openQuiz" class="f-buttonQuiz">Take a Quiz</button>
         <!-- Quiz component -->
-        <QuizComponent v-show="openQuiz" @closewindow="closeQuiz"/>    
-     </div>
+        <QuizComponent v-show="openQuiz" @closewindow="closeQuiz"/>        
+    </div>
 </template>
 
 <script>
@@ -23,15 +23,16 @@ import QuizComponent from '@/components/QuizComponent';
 export default {
     name: 'Frontpage',
     components: {
-        QuizComponent
-    },
+        QuizComponent    
+    },    
+
     data() {
         return {
             image: image, 
-            openQuiz: false,                
+            openQuiz: false,                                                    
         }
-    },  
-    
+    },
+        
     methods: {
         closeView() {
             this.$emit("closewindow")
